@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doguito Petshop | Crear cuenta</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/base/base.css">
     <link rel="stylesheet" href="./assets/css/registro.css">
     <link rel="stylesheet" href="./assets/css/componentes/card.css">
@@ -55,7 +55,7 @@
                 <fieldset>
                     <legend class="form__label">Dirección</legend>
                     <div class="input-container">
-                        <input name="cep" id="cep" class="input" type="text" placeholder="CEP" data-tipo="direccion" pattern="[\s\S]{10,50}" required>
+                        <input name="address" id="address" class="input" type="text" placeholder="Dirección" required pattern="[\s\S]{10,40}" data-tipo="direccion">
                         <label class="input-label" for="cep">Dirección completa</label>
                         <span class="input-message-error">Este campo no es valido</span>
                     </div>
@@ -74,6 +74,6 @@
             </form>
         </section>
     </main>
-    <script src="/js/app.js" type="module"></script>
+    <script src="./js/app.js" type="module"></script>
 </body>
 </html>

@@ -6,10 +6,10 @@ export function validarDatos(input){
 
     if (input.validity.valid) {
         input.parentElement.classList.remove("input-container--invalid");
-        input.parentElement.querySelector(".input-message-error").innerHTML = " ";
+        input.parentElement.querySelector(".input-message-error").innerHTML = "";
     } else {
         input.parentElement.classList.add("input-container--invalid");
-        input.parentElement.querySelector(".input-message-error").innerHTML = mostrarMensajeError(tipoInput,input);
+        input.parentElement.querySelector(".input-message-error").innerHTML = mostrarMensajeError(tipoInput, input);
     }
 }
 
@@ -18,7 +18,7 @@ const tipoError = [
     "typeMismatch",
     "patternMismatch",
     "customError",
-]
+];
 
 const mensajeError = {
     nombre: {
@@ -52,6 +52,10 @@ const mensajeError = {
         valueMissing: "El campo estado no puede estar vacio",
         patternMismatch: "La dirección debe contener entre 4 a 50 caracteres",
     },
+};
+
+const validadores = {
+    nacimiento  : input => validarFecha(input),
 }
 
 function mostrarMensajeError(tipoInput, input) {
@@ -63,20 +67,9 @@ function mostrarMensajeError(tipoInput, input) {
             console.log(mensajeError[tipoInput][error]);
             mensaje = mensajeError[tipoInput][error];
         }
-    })
+    });
     return mensaje;
 }
-
-const validadores = {
-    nacimiento  : input => validarFecha(input),
-}
-
-
-const inputNacimiento = document.querySelector("#birth");
-
-inputNacimiento.addEventListener("blur",(evento) =>{
-    validarFecha(evento.target);
-})
 
 function validarFecha(input){
     const fechaCapturada    = new Date(input.value);
